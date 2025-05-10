@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hook Cafe - Jakub Gladysz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        /* Prevent FOUC */
+        html {
+            visibility: visible;
+            opacity: 1;
+        }
+        /* Custom styles to match the design */
+        body {
+            font-family: 'EB Garamond', serif;
+            line-height: 1.75;
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        .prose {
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+        .time-to-read {
+            font-style: normal;
+            font-feature-settings: "tnum" on, "lnum" on;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Page transition */
+        a {
+            transition: color 0.3s ease;
+        }
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                maxWidth: '65ch',
+                                color: '#333',
+                                'h1, h2, h3': {
+                                    fontWeight: '500',
+                                    marginTop: '2em',
+                                    marginBottom: '1em'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Page transition
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.hostname === window.location.hostname) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        document.body.style.opacity = 0;
+                        document.body.style.transform = 'translateY(10px)';
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <div class="page-transition"></div>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <header class="text-center mb-16">
+            <h1 class="text-4xl font-medium mb-2 italic">
+                <a href="index.html" class="hover:text-gray-600">Jakub Gladysz</a>
+            </h1>
+            <p class="text-gray-600 italic">Software Developer</p>
+        </header>
+
+        <main class="prose">
+            <article>
+                <h1 class="text-3xl font-medium mb-4">Hook Cafe</h1>
+                <!-- <div class="text-sm text-gray-500 mb-8 time-to-read italic">2023-01-26 · 5 min</div> -->
+                
+                <div class="space-y-6">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+                    <h2 class="text-2xl font-medium mt-8">The Concept</h2>
+                    <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+
+                    <h2 class="text-2xl font-medium mt-8">Implementation</h2>
+                    <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    </p>
+
+                    <h2 class="text-2xl font-medium mt-8">Results</h2>
+                    <p>
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                    </p>
+                </div>
+            </article>
+        </main>
+
+        <footer class="mt-16 text-center text-sm text-gray-500">
+            <nav class="mb-4">
+                <a href="index.html" class="mx-2 hover:text-gray-900">Posts</a>
+                <a href="#" class="mx-2 hover:text-gray-900">Tags</a>
+                <a href="#" class="mx-2 hover:text-gray-900">About</a>
+            </nav>
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="hover:text-gray-900">RSS</a>
+                <span>·</span>
+                <a href="#" class="hover:text-gray-900">GitHub</a>
+            </div>
+            <p>© 2025 kuba-04</p>
+        </footer>
+    </div>
+</body>
+</html> 
