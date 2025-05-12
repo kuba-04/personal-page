@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
     <style>
         /* Prevent FOUC */
         html {
             visibility: visible;
             opacity: 1;
         }
+
         /* Custom styles to match the design */
         body {
             font-family: 'EB Garamond', serif;
@@ -22,32 +26,39 @@
             opacity: 0;
             animation: fadeIn 0.5s ease-in forwards;
         }
+
         .prose {
             max-width: 65ch;
             margin: 0 auto;
         }
+
         .article-preview {
             font-size: 16px;
             line-height: 1.6;
         }
+
         .time-to-read {
             font-style: normal;
             font-feature-settings: "tnum" on, "lnum" on;
         }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
                 transform: translateY(10px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         /* Page transition */
         a {
             transition: color 0.3s ease;
         }
+
         .page-transition {
             position: fixed;
             top: 0;
@@ -83,9 +94,9 @@
         }
 
         // Page transition
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     if (this.hostname === window.location.hostname) {
                         e.preventDefault();
                         const href = this.getAttribute('href');
@@ -100,6 +111,7 @@
         });
     </script>
 </head>
+
 <body class="bg-white text-gray-900">
     <div class="page-transition"></div>
     <div class="max-w-4xl mx-auto px-4 py-8">
@@ -121,15 +133,17 @@
                 <h2 class="text-2xl font-medium mb-2">
                     <a href="./projects/bookmarkstr.html" class="hover:text-gray-600">Bookmarkstr</a>
                 </h2>
-                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2025 · for myself and maybe some other nostr enthusiasts</div>
-                <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2025 · for myself and maybe some other nostr
+                    enthusiasts</div>
+                <!-- <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
             </article>
             <article class="mb-12">
                 <h2 class="text-2xl font-medium mb-2">
                     <a href="./projects/hook-cafe.html" class="hover:text-gray-600">Hook Cafe</a>
                 </h2>
-                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2024 · for all the good people in the world</div>
-                <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2024 · for all the good people in the world
+                </div>
+                <!-- <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
             </article>
             <!-- <article class="mb-12">
                 <h2 class="text-2xl font-medium mb-2">
@@ -143,7 +157,8 @@
 
             <header class="mb-16">
                 <h1 class="text-3xl font-medium mb-2">My work experience</h1>
-                <p class="article-preview">You can find me on Linkedin to see the enterprise projects I've worked on.<br>And send me an invite!</p>
+                <p class="article-preview">You can find me on Linkedin to see the enterprise projects I've worked
+                    on.<br>And send me an invite!</p>
             </header>
         </main>
 
@@ -162,4 +177,5 @@
         </footer>
     </div>
 </body>
-</html> 
+
+</html>
